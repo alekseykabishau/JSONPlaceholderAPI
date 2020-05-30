@@ -13,7 +13,7 @@ class UsersVC: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var users = [User]()
-
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -22,40 +22,24 @@ class UsersVC: UIViewController {
 		
 		title = "Users"
 		getUsers()
+		
 	}
 	
-	
-	//https://fakejson.com/documentation#introduction
-	// at glance more advanced fake api
-	// use url components
-	
+
 	func getUsers() {
-		let stringAddress = "https://jsonplaceholder.typicode.com/users"
-		guard let url = URL(string: stringAddress) else { print("return there"); return }
-		let session = URLSession.shared
-		let dataTask = session.dataTask(with: url) { (data, response, error) in
-			
-			if let error = error {
-				print("error: \(error)")
-				return
-			}
-			
-			if let response = response as? HTTPURLResponse {
-				print(response.statusCode)
-			}
-			
-			if let data = data {
-				do {
-					let userData = try JSONDecoder().decode([User].self, from: data)
-					self.users = userData
-					
-					DispatchQueue.main.async { self.tableView.reloadData() }
-				} catch {
-					print(error.localizedDescription)
+		NetworkManager.shared.getAllUsers { [weak self] result in
+			guard let self = self else { return }
+			switch result {
+				case .success(let users):
+					self.users = users
+					DispatchQueue.main.async {
+						print(self.users)
+						self.tableView.reloadData()
 				}
+				case .failure(let error):
+					print(error.localizedDescription)
 			}
 		}
-		dataTask.resume()
 	}
 }
 
@@ -64,6 +48,7 @@ extension UsersVC: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return users.count
 	}
+	
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let user = users[indexPath.row]
