@@ -16,6 +16,7 @@
 		5B61D11A247B34CF00D13797 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61D119247B34CF00D13797 /* User.swift */; };
 		5B6942902481D292003BDFD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69428F2481D292003BDFD5 /* NetworkManager.swift */; };
 		5B69429324820A79003BDFD5 /* JPAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69429224820A78003BDFD5 /* JPAError.swift */; };
+		5B6942992482C890003BDFD5 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6942982482C890003BDFD5 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5B61D119247B34CF00D13797 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B69428F2481D292003BDFD5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5B69429224820A78003BDFD5 /* JPAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPAError.swift; sourceTree = "<group>"; };
+		5B6942982482C890003BDFD5 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +66,9 @@
 			children = (
 				5B69429424820AE3003BDFD5 /* Utilities */,
 				5B6942912481D2A3003BDFD5 /* Managers */,
-				5B61D109247B181800D13797 /* UsersVC.swift */,
-				5B61D119247B34CF00D13797 /* User.swift */,
-				5B61D10B247B181800D13797 /* Main.storyboard */,
+				5B6942962482B643003BDFD5 /* Controller */,
+				5B6942952482B630003BDFD5 /* Model */,
+				5B6942972482B6CC003BDFD5 /* View */,
 				5B61D11B247B38EF00D13797 /* Support */,
 			);
 			path = JSONPlaceholderAPI;
@@ -98,6 +100,31 @@
 				5B69429224820A78003BDFD5 /* JPAError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5B6942952482B630003BDFD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B61D119247B34CF00D13797 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B6942962482B643003BDFD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B61D109247B181800D13797 /* UsersVC.swift */,
+				5B6942982482C890003BDFD5 /* SettingsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B6942972482B6CC003BDFD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B61D10B247B181800D13797 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +204,7 @@
 				5B61D106247B181800D13797 /* AppDelegate.swift in Sources */,
 				5B69429324820A79003BDFD5 /* JPAError.swift in Sources */,
 				5B61D108247B181800D13797 /* SceneDelegate.swift in Sources */,
+				5B6942992482C890003BDFD5 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
