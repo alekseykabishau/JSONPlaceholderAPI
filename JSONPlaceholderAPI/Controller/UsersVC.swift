@@ -52,9 +52,8 @@ extension UsersVC: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let user = users[indexPath.row]
-		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		cell.textLabel?.text = user.name
-		cell.detailTextLabel?.text = user.address.city
+		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UserCell
+		cell.set(user: user)
 		return cell
 	}
 }

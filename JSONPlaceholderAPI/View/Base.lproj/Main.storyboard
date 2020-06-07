@@ -15,33 +15,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJW-MO-3W9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJW-MO-3W9">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="aJS-yG-Rbb" detailTextLabel="VJQ-Ud-70k" style="IBUITableViewCellStyleSubtitle" id="LCD-F4-5le">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="LCD-F4-5le" customClass="UserCell" customModule="JSONPlaceholderAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LCD-F4-5le" id="FaN-U8-35f">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aJS-yG-Rbb">
-                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VJQ-Ud-70k">
-                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jHm-sb-x69">
+                                                    <rect key="frame" x="16" y="5" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="4NB-kH-kit"/>
+                                                        <constraint firstAttribute="height" constant="90" id="YNH-qC-sgf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asQ-BN-OQK">
+                                                    <rect key="frame" x="122" y="27" width="237" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="asQ-BN-OQK" firstAttribute="leading" secondItem="jHm-sb-x69" secondAttribute="trailing" constant="16" id="MIu-oF-1w8"/>
+                                                <constraint firstItem="jHm-sb-x69" firstAttribute="leading" secondItem="FaN-U8-35f" secondAttribute="leading" constant="16" id="QSU-yY-VV8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="asQ-BN-OQK" secondAttribute="trailing" constant="16" id="d2J-MS-r3K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="asQ-BN-OQK" secondAttribute="bottom" constant="16" id="hrp-aU-N4I"/>
+                                                <constraint firstItem="asQ-BN-OQK" firstAttribute="top" secondItem="FaN-U8-35f" secondAttribute="topMargin" constant="16" id="l8d-ct-UDr"/>
+                                                <constraint firstItem="asQ-BN-OQK" firstAttribute="centerY" secondItem="FaN-U8-35f" secondAttribute="centerY" id="xQU-zL-J2m"/>
+                                                <constraint firstItem="jHm-sb-x69" firstAttribute="centerY" secondItem="FaN-U8-35f" secondAttribute="centerY" id="xcq-Hd-8ej"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarView" destination="jHm-sb-x69" id="8sY-7T-fhT"/>
+                                            <outlet property="nameLabel" destination="asQ-BN-OQK" id="oVL-S3-2Dl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -68,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="109.29535232383809"/>
+            <point key="canvasLocation" x="1076.8115942028987" y="109.15178571428571"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="Sup-l8-Z8E">
