@@ -22,7 +22,6 @@ class UsersVC: UIViewController {
 		
 		title = "Users"
 		getUsers()
-		
 	}
 	
 
@@ -33,7 +32,6 @@ class UsersVC: UIViewController {
 				case .success(let users):
 					self.users = users
 					DispatchQueue.main.async {
-						print(self.users)
 						self.tableView.reloadData()
 				}
 				case .failure(let error):
@@ -52,7 +50,7 @@ extension UsersVC: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let user = users[indexPath.row]
-		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UserCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.reuseIdentifier, for: indexPath) as! UserCell
 		cell.set(user: user)
 		return cell
 	}

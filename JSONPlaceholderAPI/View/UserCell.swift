@@ -10,8 +10,11 @@ import UIKit
 
 class UserCell: UITableViewCell {
 
-	@IBOutlet weak var avatarView: UIImageView!
+	static let reuseIdentifier = String(describing: UserCell.self)
+	
+	@IBOutlet weak var avatarView: AvatarImageView!
 	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
 	
 	override func awakeFromNib() {
@@ -20,15 +23,17 @@ class UserCell: UITableViewCell {
     }
 	
 	
-	func set(user: User) {
-		avatarView.image = UIImage(named: "Aleksey")
-		nameLabel.text = user.username
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		avatarView.image = nil
 	}
-
 	
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
+	
+	func set(user: User) {
+		nameLabel.text = user.username
+		
+		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { timer in
+			self.avatarView.downloadAvatar(fromURL: user.avatarStringURL)
+		})
+	}
 }

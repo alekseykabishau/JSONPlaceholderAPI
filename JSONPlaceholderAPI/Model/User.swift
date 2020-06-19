@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aleksey Kabishau. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct User: Decodable {
 	let id: Int
@@ -17,6 +17,10 @@ struct User: Decodable {
 	let phone: String
 	let website: String
 	let company: Company
+	var avatarStringURL: String {
+		let baseURL = "https://api.adorable.io/avatar/"
+		return baseURL + username
+	}
 }
 
 struct Address: Decodable {
